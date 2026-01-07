@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Access - VPN Demo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+        }
+        
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 50px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            max-width: 600px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .success-icon {
+            font-size: 80px;
+            margin-bottom: 20px;
+            animation: bounce 1s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .message {
+            font-size: 1.2em;
+            margin: 20px 0;
+            line-height: 1.6;
+        }
+        
+        .info-box {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 30px 0;
+        }
+        
+        .info-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .info-item:last-child {
+            border-bottom: none;
+        }
+        
+        .label {
+            font-weight: bold;
+            opacity: 0.8;
+        }
+        
+        .value {
+            font-family: 'Courier New', monospace;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        
+        .badge {
+            display: inline-block;
+            background: #00ff88;
+            color: #000;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        
+        .features {
+            margin-top: 30px;
+            text-align: left;
+        }
+        
+        .feature {
+            padding: 10px 0;
+            display: flex;
+            align-items: center;
+        }
+        
+        .feature::before {
+            content: "✓";
+            color: #00ff88;
+            font-size: 1.5em;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="success-icon">🔓</div>
+        <h1>Access Granted!</h1>
+        <div class="badge">VPN CONNECTED</div>
+        
+        <p class="message">
+            You have successfully accessed this restricted website through your secure VPN connection.
+        </p>
+        
+        <div class="info-box">
+            <div class="info-item">
+                <span class="label">Your IP Address:</span>
+                <span class="value">{{ client_ip }}</span>
+            </div>
+            <div class="info-item">
+                <span class="label">Connection:</span>
+                <span class="value">Encrypted Tunnel</span>
+            </div>
+            <div class="info-item">
+                <span class="label">Encryption:</span>
+                <span class="value">AES-256</span>
+            </div>
+            <div class="info-item">
+                <span class="label">Status:</span>
+                <span class="value">✓ Secure</span>
+            </div>
+        </div>
+        
+        <div class="features">
+            <h3>Your connection is protected by:</h3>
+            <div class="feature">End-to-end AES-256 encryption</div>
+            <div class="feature">RSA-2048 key exchange</div>
+            <div class="feature">Authenticated secure tunnel</div>
+            <div class="feature">IP address masking</div>
+        </div>
+        
+        <p style="margin-top: 30px; opacity: 0.7; font-size: 0.9em;">
+            This is a demonstration of VPN functionality for educational purposes.
+        </p>
+    </div>
+</body>
+</html>

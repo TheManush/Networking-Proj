@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Access Denied</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+        }
+        
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 50px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            max-width: 600px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .error-icon {
+            font-size: 80px;
+            margin-bottom: 20px;
+            animation: shake 0.5s;
+        }
+        
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-10px); }
+            75% { transform: translateX(10px); }
+        }
+        
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #ff5555;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .message {
+            font-size: 1.2em;
+            margin: 20px 0;
+            line-height: 1.6;
+        }
+        
+        .error-box {
+            background: rgba(255, 85, 85, 0.2);
+            border: 2px solid #ff5555;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 30px 0;
+        }
+        
+        .error-code {
+            font-size: 3em;
+            font-weight: bold;
+            color: #ff5555;
+            margin-bottom: 10px;
+        }
+        
+        .info-item {
+            padding: 10px 0;
+            opacity: 0.8;
+        }
+        
+        .solution {
+            background: rgba(0, 255, 136, 0.1);
+            border: 1px solid rgba(0, 255, 136, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 30px 0;
+            text-align: left;
+        }
+        
+        .solution h3 {
+            color: #00ff88;
+            margin-bottom: 15px;
+        }
+        
+        .step {
+            padding: 8px 0;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .step-number {
+            background: #00ff88;
+            color: #000;
+            border-radius: 50%;
+            width: 25px;
+            height: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="error-icon">🔒</div>
+        <h1>Access Denied</h1>
+        
+        <div class="error-box">
+            <div class="error-code">403</div>
+            <p style="font-size: 1.1em;">This website is not available in your region</p>
+        </div>
+        
+        <p class="message">
+            The content you are trying to access is restricted and cannot be reached from your current location.
+        </p>
+        
+        <div class="info-item">
+            Your IP Address: <strong>{{ client_ip }}</strong>
+        </div>
+        
+        <div class="solution">
+            <h3>How to Access This Site:</h3>
+            <div class="step">
+                <div class="step-number">1</div>
+                <div>Open the VPN Client application</div>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <div>Enter your credentials and server address</div>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <div>Click "CONNECT VPN" button</div>
+            </div>
+            <div class="step">
+                <div class="step-number">4</div>
+                <div>Wait for secure tunnel establishment</div>
+            </div>
+            <div class="step">
+                <div class="step-number">5</div>
+                <div>Refresh this page or use "Test Demo Site" button</div>
+            </div>
+        </div>
+        
+        <p style="margin-top: 30px; opacity: 0.7; font-size: 0.9em;">
+            This restriction demonstrates VPN functionality for educational purposes.
+        </p>
+    </div>
+</body>
+</html>
